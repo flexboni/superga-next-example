@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ch 08. Next.js
 
-## Getting Started
+## 03. Next.js 기본 1-1
 
-First, run the development server:
+### next/link vs a
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+next/link 는 필요한 데이터만 fetch 해온다. 그리고 미리 그 페이지에 대한 데이터를 fetch 해 와서 빠른 전환을 보여준다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+a 는 화면 전체를 새로 로드한다.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 03. Next.js 기본 1-2
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### next/image vs img
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+next/image 는 사이즈 조절 및 최적화를 자동으로 해준다.
 
-## Learn More
+<!--  -->
 
-To learn more about Next.js, take a look at the following resources:
+img 는 리소스 파일 그대로를 보여준다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 04. Next.js 기본 2-1
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### [Pre-rendering](https://nextjs.org/learn/basics/data-fetching)
 
-## Deploy on Vercel
+hydration: 페이지가 브라우저에 로드되고 자바스크립트 코드가 실행되면서 페이지가 인터렉티브하게 동작할 상태가 되는 과정
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next.js 는 기본적으로 모든 페이지가 pre-rendering 한다. 단, env=development 인 경우 무조건 each request 마다 빌드한다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 04. Next.js 기본 2-2
+
+### SSG
+
+Build time 에 서버에서만 동작
+
+### SSR
+
+Request time 에 동작 / TTFB Slow
+
+### CSR
+
+Request time 이후 동작 SWR
