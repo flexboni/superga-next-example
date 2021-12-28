@@ -4,21 +4,6 @@ import React, { useEffect, useState } from "react";
 const url = "https://api.spacexdata.com/v3/launches";
 
 const launches = ({ data }) => {
-  // CSR
-  //   const [data, setData] = useState(null);
-
-  //   useEffect(() => {
-  //     const fetchLaunches = async () => {
-  //       const res = await fetch(url);
-  //       const data = await res.json();
-
-  //       setData(data);
-  //     };
-
-  //     fetchLaunches();
-  //   }, []);
-  /////////////////////////////////////////////////////////////////////////////
-
   if (!data) {
     return null;
   }
@@ -34,8 +19,11 @@ const launches = ({ data }) => {
   );
 };
 
-// SSR
-export const getServerSideProps = async () => {
+/**
+ * getServerSideProps 와 달리 build time 시 데이터를 fetch 해서 build/ dir 어딘가에
+ * 저장 해놓고 화면이 보여질 때 불러온다
+ */
+export const getStaticProps = async () => {
   const res = await fetch(url);
   const data = await res.json();
 
@@ -43,5 +31,18 @@ export const getServerSideProps = async () => {
     props: { data },
   };
 };
+
+/**
+ * getStaticProps 와 달리 화면이 갱신될 때마다(요청이 서버로 갈 때마다)
+ * 데이터를 fetch 해온다.
+ */
+// export const getServerSideProps = async () => {
+//   const res = await fetch(url);
+//   const data = await res.json();
+
+//   return {
+//     props: { data },
+//   };
+// };
 
 export default launches;
