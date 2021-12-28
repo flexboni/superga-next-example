@@ -1,9 +1,14 @@
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+import Layout from "../components/layout";
 
-const FistPost = () => {
+const FirstPost = () => {
   return (
-    <div>
+    <Layout>
+      <Head>
+        <title>First Post</title>
+      </Head>
       <h1>First Post!!</h1>
 
       <h2>
@@ -11,8 +16,8 @@ const FistPost = () => {
           <a>Back to home</a>
         </Link>
       </h2>
-    </div>
+    </Layout>
   );
 };
 
-export default FistPost;
+export default FirstPost;
