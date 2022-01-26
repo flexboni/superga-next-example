@@ -43,7 +43,8 @@ export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {
     paths: [{ params: { id: "ssg-ssr" } }],
-    fallback: false,
+    fallback: false, // 404
+    // fallback: true, // router.isFallback
   };
 }
 
