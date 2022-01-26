@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./layout.module.css";
+import styles from "src/components/layout.module.css";
 
 export const siteTitle = "Next.js Sample Website";
 
