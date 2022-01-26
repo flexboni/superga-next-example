@@ -1,9 +1,9 @@
-import Layout from "../../components/layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
-import Head from "next/head";
-import Date from "../../components/date";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
+import Head from "next/head";
+import { getAllPostIds, getPostData } from "src/lib/posts";
+import Layout from "src/components/layout";
+import Date from "src/components/date";
 
 export default function Post({ postData }) {
   const router = useRouter();
@@ -27,7 +27,6 @@ export default function Post({ postData }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-
       {postData.title}
       <br />
       {postData.id}
