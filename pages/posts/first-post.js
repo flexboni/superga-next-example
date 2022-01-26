@@ -1,7 +1,7 @@
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
-import Layout from "../../components/layout";
+import Layout from "src/components/layout";
 
 const FirstPost = () => {
   return (
