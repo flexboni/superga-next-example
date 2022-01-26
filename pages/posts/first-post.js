@@ -1,7 +1,7 @@
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
-import Layout from "../../components/layout";
+import Layout from "src/components/layout";
 
 const FirstPost = () => {
   return (
@@ -9,8 +9,7 @@ const FirstPost = () => {
       <Head>
         <title>First Post</title>
       </Head>
-      <h1>First Post!!</h1>
-
+      <h1>First Post</h1>
       <h2>
         <Link href="/">
           <a>Back to home</a>

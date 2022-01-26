@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
-import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
-import Date from "../components/date";
+import { getSortedPostsData } from "src/lib/posts";
+import Layout, { siteTitle } from "src/components/layout";
+import Date from "src/components/common/date";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -27,7 +27,6 @@ export default function Home({ allPostsData }) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>
         </p>
       </section>
-
       <section>
         <h2>Blog</h2>
         <ul>
